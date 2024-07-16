@@ -9,7 +9,7 @@ module.exports = grammar({
     _definition: $ => choice(
       $.project,
       $.table,
-      // $.enum,
+      $.enum,
       // $.reference,
       // $.table_group,
       // $.comment,
@@ -32,9 +32,13 @@ module.exports = grammar({
       "}"
     ),
 
-    // enum: $ => seq(
-
-    // ),
+    enum: $ => seq(
+      choice("enum", "Enum"),
+      alias($._identifier, $.enum_name),
+      "{",
+      // repeat($.enum_row),
+      "}"
+    ),
 
     // reference: $ => seq(
 
