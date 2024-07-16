@@ -22,6 +22,19 @@ module.exports = grammar({
 
     _null: $ => choice("null", "nil"),
 
+    type: $ => choice(
+      "bool",
+      "boolean",
+      "date",
+      "datetime",
+      "int",
+      "integer",
+      "string",
+      "text",
+      "timestamp",
+      "varchar",
+    ),
+
     key_value: $ => seq(
       alias($._identifier, $.key),
       ":",
@@ -62,8 +75,19 @@ module.exports = grammar({
       choice("table", "Table"),
       alias($._identifier, $.table_name),
       "{",
-      // repeat($.table_row),
+      repeat($._table_row),
       "}"
+    ),
+
+    _table_row: $ => choice(
+      $.column,
+      $.note,
+    ),
+
+    column: $ => seq(
+      alias($._identifier, $.column_name),
+      $.type,
+      // optional($.column_attributes),
     ),
 
     enum: $ => seq(

@@ -25,3 +25,40 @@ table table_name {
 (document
   (table
     (table_name)))
+
+================================================================================
+Simple table definition
+================================================================================
+
+Table people {
+  id int
+  name varchar
+  is_adult boolean
+  created_at datetime
+  updated_at datetime
+
+  Note: "This is a note"
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_name)
+    (column
+      (column_name)
+      (type))
+    (column
+      (column_name)
+      (type))
+    (column
+      (column_name)
+      (type))
+    (column
+      (column_name)
+      (type))
+    (column
+      (column_name)
+      (type))
+    (note
+      (note_text))))

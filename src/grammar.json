@@ -71,6 +71,51 @@
         }
       ]
     },
+    "type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "bool"
+        },
+        {
+          "type": "STRING",
+          "value": "boolean"
+        },
+        {
+          "type": "STRING",
+          "value": "date"
+        },
+        {
+          "type": "STRING",
+          "value": "datetime"
+        },
+        {
+          "type": "STRING",
+          "value": "int"
+        },
+        {
+          "type": "STRING",
+          "value": "integer"
+        },
+        {
+          "type": "STRING",
+          "value": "string"
+        },
+        {
+          "type": "STRING",
+          "value": "text"
+        },
+        {
+          "type": "STRING",
+          "value": "timestamp"
+        },
+        {
+          "type": "STRING",
+          "value": "varchar"
+        }
+      ]
+    },
     "key_value": {
       "type": "SEQ",
       "members": [
@@ -232,8 +277,46 @@
           "value": "{"
         },
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_table_row"
+          }
+        },
+        {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "_table_row": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "column"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "note"
+        }
+      ]
+    },
+    "column": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_identifier"
+          },
+          "named": true,
+          "value": "column_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "type"
         }
       ]
     },

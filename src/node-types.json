@@ -1,5 +1,24 @@
 [
   {
+    "type": "column",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "column_name",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "comment",
     "named": true,
     "fields": {}
@@ -144,9 +163,17 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "column",
+          "named": true
+        },
+        {
+          "type": "note",
+          "named": true
+        },
         {
           "type": "table_name",
           "named": true
@@ -168,6 +195,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "type",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "value",
@@ -219,6 +251,26 @@
     "named": false
   },
   {
+    "type": "bool",
+    "named": false
+  },
+  {
+    "type": "boolean",
+    "named": false
+  },
+  {
+    "type": "column_name",
+    "named": true
+  },
+  {
+    "type": "date",
+    "named": false
+  },
+  {
+    "type": "datetime",
+    "named": false
+  },
+  {
     "type": "enum",
     "named": false
   },
@@ -228,6 +280,14 @@
   },
   {
     "type": "false",
+    "named": false
+  },
+  {
+    "type": "int",
+    "named": false
+  },
+  {
+    "type": "integer",
     "named": false
   },
   {
@@ -267,6 +327,10 @@
     "named": true
   },
   {
+    "type": "string",
+    "named": false
+  },
+  {
     "type": "table",
     "named": false
   },
@@ -283,7 +347,19 @@
     "named": false
   },
   {
+    "type": "text",
+    "named": false
+  },
+  {
+    "type": "timestamp",
+    "named": false
+  },
+  {
     "type": "true",
+    "named": false
+  },
+  {
+    "type": "varchar",
     "named": false
   },
   {
