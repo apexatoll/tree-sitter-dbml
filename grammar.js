@@ -10,7 +10,7 @@ module.exports = grammar({
       $.project,
       $.table,
       $.enum,
-      // $.reference,
+      $.reference,
       // $.table_group,
       // $.comment,
       // $.note,
@@ -40,7 +40,27 @@ module.exports = grammar({
       "}"
     ),
 
-    // reference: $ => seq(
+    reference: $ => choice(
+      $._short_reference,
+      $._long_reference,
+    ),
+
+    _short_reference: $ => seq(
+      choice("ref", "Ref"),
+      optional(alias($._identifier, $.reference_name)),
+      ":",
+      // $.relationship
+    ),
+
+    _long_reference: $ => seq(
+      choice("ref", "Ref"),
+      optional(alias($._identifier, $.reference_name)),
+      "{",
+      // $.relationship,
+      "}",
+    ),
+
+    // relationship: $ => seq(
 
     // ),
 

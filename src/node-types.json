@@ -16,6 +16,10 @@
           "named": true
         },
         {
+          "type": "reference",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         }
@@ -53,6 +57,21 @@
     }
   },
   {
+    "type": "reference",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "reference_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "table",
     "named": true,
     "fields": {},
@@ -68,11 +87,19 @@
     }
   },
   {
+    "type": ":",
+    "named": false
+  },
+  {
     "type": "Enum",
     "named": false
   },
   {
     "type": "Project",
+    "named": false
+  },
+  {
+    "type": "Ref",
     "named": false
   },
   {
@@ -93,6 +120,14 @@
   },
   {
     "type": "project_name",
+    "named": true
+  },
+  {
+    "type": "ref",
+    "named": false
+  },
+  {
+    "type": "reference_name",
     "named": true
   },
   {
