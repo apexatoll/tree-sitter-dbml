@@ -22,6 +22,10 @@
         {
           "type": "table",
           "named": true
+        },
+        {
+          "type": "table_group",
+          "named": true
         }
       ]
     }
@@ -87,6 +91,21 @@
     }
   },
   {
+    "type": "table_group",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "table_group_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": ":",
     "named": false
   },
@@ -104,6 +123,10 @@
   },
   {
     "type": "Table",
+    "named": false
+  },
+  {
+    "type": "TableGroup",
     "named": false
   },
   {
@@ -135,8 +158,16 @@
     "named": false
   },
   {
+    "type": "table_group_name",
+    "named": true
+  },
+  {
     "type": "table_name",
     "named": true
+  },
+  {
+    "type": "tablegroup",
+    "named": false
   },
   {
     "type": "{",

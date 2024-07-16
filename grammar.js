@@ -11,7 +11,7 @@ module.exports = grammar({
       $.table,
       $.enum,
       $.reference,
-      // $.table_group,
+      $.table_group,
       // $.comment,
       // $.note,
     ),
@@ -64,9 +64,13 @@ module.exports = grammar({
 
     // ),
 
-    // table_group: $ => seq(
-
-    // ),
+    table_group: $ => seq(
+      choice("tablegroup", "TableGroup"),
+      optional(alias($._identifier, $.table_group_name)),
+      "{",
+      // repeat($.table_group_row),
+      "}",
+    ),
 
     // comment: $ => seq(
 
