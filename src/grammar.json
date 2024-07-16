@@ -18,6 +18,10 @@
         {
           "type": "SYMBOL",
           "name": "project"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "table"
         }
       ]
     },
@@ -45,6 +49,41 @@
           },
           "named": true,
           "value": "project_name"
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "table": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "table"
+            },
+            {
+              "type": "STRING",
+              "value": "Table"
+            }
+          ]
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_identifier"
+          },
+          "named": true,
+          "value": "table_name"
         },
         {
           "type": "STRING",
