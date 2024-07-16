@@ -108,3 +108,36 @@ Table people {
         (null_setting)
         (note
           (note_text))))))
+
+================================================================================
+Table with binary column settings
+================================================================================
+
+Table people {
+  id int [pk]
+  name varchar [default: null]
+  is_adult boolean [default: false]
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_name)
+    (column
+      (column_name)
+      (type)
+      (column_settings
+        (primary_key_setting)))
+    (column
+      (column_name)
+      (type)
+      (column_settings
+        (default_setting
+          (value))))
+    (column
+      (column_name)
+      (type)
+      (column_settings
+        (default_setting
+          (value))))))

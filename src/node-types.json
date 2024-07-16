@@ -31,6 +31,10 @@
       "required": false,
       "types": [
         {
+          "type": "default_setting",
+          "named": true
+        },
+        {
           "type": "increment_setting",
           "named": true
         },
@@ -61,6 +65,21 @@
     "type": "comment",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "default_setting",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "document",
@@ -319,6 +338,10 @@
   },
   {
     "type": "datetime",
+    "named": false
+  },
+  {
+    "type": "default",
     "named": false
   },
   {

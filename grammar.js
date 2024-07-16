@@ -95,6 +95,7 @@ module.exports = grammar({
       list(
         choice(
           $._unary_setting,
+          $._binary_setting,
           $.note
         )
       ),
@@ -110,6 +111,17 @@ module.exports = grammar({
       alias("not null", $.not_null_setting),
       alias("unique", $.unique_setting),
       alias("increment", $.increment_setting),
+    ),
+
+    _binary_setting: $ => choice(
+      $.default_setting,
+      // $.inline_reference
+    ),
+
+    default_setting: $ => seq(
+      "default",
+      ":",
+      $.value
     ),
 
     enum: $ => seq(
