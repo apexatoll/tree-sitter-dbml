@@ -20,7 +20,7 @@ module.exports = grammar({
       choice("project", "Project"),
       alias($._identifier, $.project_name),
       "{",
-      // $.project_row,
+      // repeat($.project_row),
       "}"
     ),
 
