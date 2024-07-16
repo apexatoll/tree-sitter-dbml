@@ -163,6 +163,13 @@ module.exports = grammar({
 
     variant: $ => seq(
       choice($._identifier, $._string),
+      optional($.variant_notes),
+    ),
+
+    variant_notes: $ => seq(
+      "[",
+      list($.note),
+      "]"
     ),
 
     reference: $ => choice(

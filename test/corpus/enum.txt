@@ -63,3 +63,28 @@ enum enum_name {
     (variant)
     (variant)
     (variant)))
+
+================================================================================
+Enum with notes
+================================================================================
+
+enum enum_name {
+  foo [note: "foobar"]
+  bar
+  baz [note: "foobaz"]
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (enum
+    (enum_name)
+    (variant
+      (variant_notes
+        (note
+          (note_text))))
+    (variant)
+    (variant
+      (variant_notes
+        (note
+          (note_text))))))
