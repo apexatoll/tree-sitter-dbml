@@ -424,6 +424,10 @@
           "named": true
         },
         {
+          "type": "table_alias",
+          "named": true
+        },
+        {
           "type": "table_name",
           "named": true
         }
@@ -555,6 +559,10 @@
     "named": false
   },
   {
+    "type": "as",
+    "named": false
+  },
+  {
     "type": "bool",
     "named": false
   },
@@ -661,6 +669,10 @@
   {
     "type": "table",
     "named": false
+  },
+  {
+    "type": "table_alias",
+    "named": true
   },
   {
     "type": "table_group_name",

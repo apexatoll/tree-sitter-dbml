@@ -141,3 +141,23 @@ Table people {
       (column_settings
         (default_setting
           (value))))))
+
+================================================================================
+Table with alias
+================================================================================
+
+Table people as Ppl {
+  id int [pk]
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_name)
+    (table_alias)
+    (column
+      (column_name)
+      (type)
+      (column_settings
+        (primary_key_setting)))))
