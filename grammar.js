@@ -84,10 +84,18 @@ module.exports = grammar({
 
     comment: $ => choice(
       $._inline_comment,
-      // $._multiline_comment,
+      $._multiline_comment,
     ),
 
     _inline_comment: $ => /\/\/.*\n/,
+
+    _multiline_comment: $ => seq(
+      "/*",
+      "\n",
+      /.*/,
+      "\n",
+      "*/",
+    ),
     
     note: $ => choice(
       $._short_note,

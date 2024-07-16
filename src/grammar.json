@@ -323,12 +323,41 @@
         {
           "type": "SYMBOL",
           "name": "_inline_comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_multiline_comment"
         }
       ]
     },
     "_inline_comment": {
       "type": "PATTERN",
       "value": "\\/\\/.*\\n"
+    },
+    "_multiline_comment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "/*"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        },
+        {
+          "type": "PATTERN",
+          "value": ".*"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        },
+        {
+          "type": "STRING",
+          "value": "*/"
+        }
+      ]
     },
     "note": {
       "type": "CHOICE",
