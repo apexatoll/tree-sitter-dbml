@@ -8,6 +8,14 @@ module.exports = grammar({
 
     _string: $ => /".*"/,
 
+    _number: $ => /[0-9]+/,
+
+    _boolean: $ => choice("true", "false"),
+
+    _null: $ => choice("null", "nil"),
+
+    _comment: $ => /\/\/.*\n/,
+
     _multiline_string: $ => seq(
       "'''",
       "\n",
@@ -16,11 +24,13 @@ module.exports = grammar({
       "\n",
     ),
 
-    _number: $ => /[0-9]+/,
-
-    _boolean: $ => choice("true", "false"),
-
-    _null: $ => choice("null", "nil"),
+    _multiline_comment: $ => seq(
+      "/*",
+      "\n",
+      /.*/,
+      "\n",
+      "*/",
+    ),
 
     type: $ => choice(
       "bool",
@@ -264,20 +274,10 @@ module.exports = grammar({
     ),
 
     comment: $ => choice(
-      $._inline_comment,
+      $._comment,
       $._multiline_comment,
     ),
 
-    _inline_comment: $ => /\/\/.*\n/,
-
-    _multiline_comment: $ => seq(
-      "/*",
-      "\n",
-      /.*/,
-      "\n",
-      "*/",
-    ),
-    
     note: $ => choice(
       $._short_note,
       $._long_note,

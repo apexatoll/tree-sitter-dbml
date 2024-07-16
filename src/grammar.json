@@ -16,31 +16,6 @@
       "type": "PATTERN",
       "value": "\".*\""
     },
-    "_multiline_string": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "'''"
-        },
-        {
-          "type": "STRING",
-          "value": "\n"
-        },
-        {
-          "type": "PATTERN",
-          "value": ".*"
-        },
-        {
-          "type": "STRING",
-          "value": "'''"
-        },
-        {
-          "type": "STRING",
-          "value": "\n"
-        }
-      ]
-    },
     "_number": {
       "type": "PATTERN",
       "value": "[0-9]+"
@@ -68,6 +43,60 @@
         {
           "type": "STRING",
           "value": "nil"
+        }
+      ]
+    },
+    "_comment": {
+      "type": "PATTERN",
+      "value": "\\/\\/.*\\n"
+    },
+    "_multiline_string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "'''"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        },
+        {
+          "type": "PATTERN",
+          "value": ".*"
+        },
+        {
+          "type": "STRING",
+          "value": "'''"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "_multiline_comment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "/*"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        },
+        {
+          "type": "PATTERN",
+          "value": ".*"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        },
+        {
+          "type": "STRING",
+          "value": "*/"
         }
       ]
     },
@@ -1208,40 +1237,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_inline_comment"
+          "name": "_comment"
         },
         {
           "type": "SYMBOL",
           "name": "_multiline_comment"
-        }
-      ]
-    },
-    "_inline_comment": {
-      "type": "PATTERN",
-      "value": "\\/\\/.*\\n"
-    },
-    "_multiline_comment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "/*"
-        },
-        {
-          "type": "STRING",
-          "value": "\n"
-        },
-        {
-          "type": "PATTERN",
-          "value": ".*"
-        },
-        {
-          "type": "STRING",
-          "value": "\n"
-        },
-        {
-          "type": "STRING",
-          "value": "*/"
         }
       ]
     },
