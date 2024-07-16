@@ -16,6 +16,25 @@ module.exports = grammar({
       "\n",
     ),
 
+    _number: $ => /[0-9]+/,
+
+    _boolean: $ => choice("true", "false"),
+
+    _null: $ => choice("null", "nil"),
+
+    key_value: $ => seq(
+      alias($._identifier, $.key),
+      ":",
+      $.value,
+    ),
+
+    value: $ => choice(
+      $._boolean,
+      $._number,
+      $._null,
+      $._string,
+    ),
+
     _definition: $ => choice(
       $.project,
       $.table,
@@ -30,8 +49,13 @@ module.exports = grammar({
       choice("project", "Project"),
       alias($._identifier, $.project_name),
       "{",
-      // repeat($.project_row),
+      repeat($._project_row),
       "}"
+    ),
+
+    _project_row: $ => choice(
+      $.key_value,
+      $.note
     ),
 
     table: $ => seq(

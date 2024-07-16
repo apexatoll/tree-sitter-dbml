@@ -59,6 +59,25 @@
     }
   },
   {
+    "type": "key_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "key",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "note",
     "named": true,
     "fields": {},
@@ -87,9 +106,17 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "key_value",
+          "named": true
+        },
+        {
+          "type": "note",
+          "named": true
+        },
         {
           "type": "project_name",
           "named": true
@@ -141,6 +168,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "value",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "\n",
@@ -195,12 +227,28 @@
     "named": true
   },
   {
+    "type": "false",
+    "named": false
+  },
+  {
+    "type": "key",
+    "named": true
+  },
+  {
+    "type": "nil",
+    "named": false
+  },
+  {
     "type": "note",
     "named": false
   },
   {
     "type": "note_name",
     "named": true
+  },
+  {
+    "type": "null",
+    "named": false
   },
   {
     "type": "project",
@@ -232,6 +280,10 @@
   },
   {
     "type": "tablegroup",
+    "named": false
+  },
+  {
+    "type": "true",
     "named": false
   },
   {

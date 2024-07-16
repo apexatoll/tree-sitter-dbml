@@ -25,3 +25,37 @@ project project_name {
 (document
   (project
     (project_name)))
+
+================================================================================
+Fully defined project defitinion
+================================================================================
+
+Project some_project {
+  database: "postgresql"
+  version: 15
+  public: false
+  Note: "Heres a note"
+
+  Note: '''
+    Heres a multiline note
+  '''
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (project
+    (project_name)
+    (key_value
+      (key)
+      (value))
+    (key_value
+      (key)
+      (value))
+    (key_value
+      (key)
+      (value))
+    (note
+      (note_text))
+    (note
+      (note_text))))
