@@ -496,8 +496,22 @@
           "value": "column_name"
         },
         {
-          "type": "SYMBOL",
-          "name": "type"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "type"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_identifier"
+              },
+              "named": true,
+              "value": "type"
+            }
+          ]
         },
         {
           "type": "CHOICE",

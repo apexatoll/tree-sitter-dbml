@@ -34,6 +34,7 @@ Table people {
   id int
   name varchar
   is_adult boolean
+  is_adult custom_type
   created_at datetime
   updated_at datetime
 
@@ -45,6 +46,9 @@ Table people {
 (schema
   (table
     (table_name)
+    (column
+      (column_name)
+      (type))
     (column
       (column_name)
       (type))

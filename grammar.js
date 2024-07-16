@@ -120,7 +120,10 @@ module.exports = grammar({
 
     column: $ => seq(
       alias($._identifier, $.column_name),
-      $.type,
+      choice(
+        $.type,
+        alias($._identifier, $.type)
+      ),
       optional($.column_settings),
     ),
 
