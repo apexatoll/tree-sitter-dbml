@@ -141,20 +141,59 @@ module.exports = grammar({
       choice("ref", "Ref"),
       optional(alias($._identifier, $.reference_name)),
       ":",
-      // $.relationship
+      $._relationship
     ),
 
     _long_reference: $ => seq(
       choice("ref", "Ref"),
       optional(alias($._identifier, $.reference_name)),
       "{",
-      // $.relationship,
+      $._relationship,
       "}",
     ),
 
-    // relationship: $ => seq(
+    _relationship: $ => choice(
+      $.one_to_many,
+      $.many_to_one,
+      $.one_to_one,
+      $.many_to_many,
+    ),
 
-    // ),
+    one_to_many: $ => seq(
+      alias($._column_reference, $.from_column),
+      "<",
+      alias($._column_reference, $.to_column),
+    ),
+
+    many_to_one: $ => seq(
+      alias($._column_reference, $.from_column),
+      ">",
+      alias($._column_reference, $.to_column),
+    ),
+
+    one_to_one: $ => seq(
+      alias($._column_reference, $.from_column),
+      "-",
+      alias($._column_reference, $.to_column),
+    ),
+
+    many_to_many: $ => seq(
+      alias($._column_reference, $.from_column),
+      "<>",
+      alias($._column_reference, $.to_column),
+    ),
+
+    _column_reference: $ => seq(
+      optional(
+        seq(
+          alias($._identifier, $.schema_name),
+          "."
+        )
+      ),
+      alias($._identifier, $.table_name),
+      ".",
+      alias($._identifier, $.column_name)
+    ),
 
     table_group: $ => seq(
       choice("tablegroup", "TableGroup"),

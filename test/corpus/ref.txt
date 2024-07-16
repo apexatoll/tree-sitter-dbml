@@ -7,7 +7,7 @@ Ref:
 --------------------------------------------------------------------------------
 
 (document
-  (reference))
+  (ERROR))
 
 ================================================================================
 Empty shortform Ref definition with name
@@ -18,8 +18,8 @@ Ref name:
 --------------------------------------------------------------------------------
 
 (document
-  (reference
-    (reference_name)))
+  (ERROR
+    (table_name)))
 
 ================================================================================
 Empty longform Ref definition
@@ -32,7 +32,7 @@ Ref {
 --------------------------------------------------------------------------------
 
 (document
-  (reference))
+  (ERROR))
 
 ================================================================================
 Empty longform Ref definition with name
@@ -45,8 +45,8 @@ Ref name {
 --------------------------------------------------------------------------------
 
 (document
-  (reference
-    (reference_name)))
+  (ERROR
+    (table_name)))
 
 ================================================================================
 Empty shortform ref definition
@@ -57,7 +57,7 @@ ref:
 --------------------------------------------------------------------------------
 
 (document
-  (reference))
+  (ERROR))
 
 ================================================================================
 Empty shortform ref definition with name
@@ -68,8 +68,8 @@ ref name:
 --------------------------------------------------------------------------------
 
 (document
-  (reference
-    (reference_name)))
+  (ERROR
+    (table_name)))
 
 ================================================================================
 Empty longform ref definition
@@ -82,7 +82,7 @@ ref {
 --------------------------------------------------------------------------------
 
 (document
-  (reference))
+  (ERROR))
 
 ================================================================================
 Empty longform ref definition with name
@@ -95,5 +95,181 @@ ref name {
 --------------------------------------------------------------------------------
 
 (document
+  (ERROR
+    (table_name)))
+
+================================================================================
+Public one-to-many reference
+================================================================================
+
+Ref name {
+  users.id < posts.user_id
+}
+
+--------------------------------------------------------------------------------
+
+(document
   (reference
-    (reference_name)))
+    (reference_name)
+    (one_to_many
+      (from_column
+        (table_name)
+        (column_name))
+      (to_column
+        (table_name)
+        (column_name)))))
+
+================================================================================
+Namespaced one-to-many reference
+================================================================================
+
+Ref name {
+  app.users.id < app.posts.user_id
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (reference
+    (reference_name)
+    (one_to_many
+      (from_column
+        (schema_name)
+        (table_name)
+        (column_name))
+      (to_column
+        (schema_name)
+        (table_name)
+        (column_name)))))
+
+================================================================================
+Public many-to-one reference
+================================================================================
+
+Ref name {
+  posts.user_id > users.id
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (reference
+    (reference_name)
+    (many_to_one
+      (from_column
+        (table_name)
+        (column_name))
+      (to_column
+        (table_name)
+        (column_name)))))
+
+================================================================================
+Namespaced many-to-one reference
+================================================================================
+
+Ref name {
+  app.posts.user_id > app.users.id
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (reference
+    (reference_name)
+    (many_to_one
+      (from_column
+        (schema_name)
+        (table_name)
+        (column_name))
+      (to_column
+        (schema_name)
+        (table_name)
+        (column_name)))))
+
+================================================================================
+Public one-to-one reference
+================================================================================
+
+Ref name {
+  users.id - user_infos.user_id
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (reference
+    (reference_name)
+    (one_to_one
+      (from_column
+        (table_name)
+        (column_name))
+      (to_column
+        (table_name)
+        (column_name)))))
+
+================================================================================
+Namespaced one-to-one reference
+================================================================================
+
+Ref name {
+  app.users.id - app.user_infos.user_id
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (reference
+    (reference_name)
+    (one_to_one
+      (from_column
+        (schema_name)
+        (table_name)
+        (column_name))
+      (to_column
+        (schema_name)
+        (table_name)
+        (column_name)))))
+
+================================================================================
+Public many-to-many reference
+================================================================================
+
+Ref name {
+  authors.id <> books.id
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (reference
+    (reference_name)
+    (many_to_many
+      (from_column
+        (table_name)
+        (column_name))
+      (to_column
+        (table_name)
+        (column_name)))))
+
+================================================================================
+Namespaced many-to-many reference
+================================================================================
+
+Ref name {
+  app.authors.id <> app.books.id
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (reference
+    (reference_name)
+    (many_to_many
+      (from_column
+        (schema_name)
+        (table_name)
+        (column_name))
+      (to_column
+        (schema_name)
+        (table_name)
+        (column_name)))))
