@@ -25,3 +25,22 @@ tablegroup table_group_name {
 (document
   (table_group
     (table_group_name)))
+
+================================================================================
+Table group definition
+================================================================================
+
+tablegroup table_group_name {
+  table1
+  table2
+  table3
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (table_group
+    (table_group_name)
+    (table_name)
+    (table_name)
+    (table_name)))

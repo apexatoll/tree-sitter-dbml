@@ -1186,6 +1186,18 @@
           "value": "{"
         },
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_identifier"
+            },
+            "named": true,
+            "value": "table_name"
+          }
+        },
+        {
           "type": "STRING",
           "value": "}"
         }

@@ -259,7 +259,7 @@ module.exports = grammar({
       choice("tablegroup", "TableGroup"),
       optional(alias($._identifier, $.table_group_name)),
       "{",
-      // repeat($.table_group_row),
+      repeat(alias($._identifier, $.table_name)),
       "}",
     ),
 
