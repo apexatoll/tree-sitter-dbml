@@ -18,10 +18,8 @@ module.exports = grammar({
 
     multiline_string: _ => seq(
       "'''",
-      "\n",
-      /.*/,
+      repeat(seq(/.*/, "\n")),
       "'''",
-      "\n",
     ),
 
     _multiline_comment: _ => seq(

@@ -231,3 +231,24 @@ Table people [headercolor: "#555555", focus] {
       (type)
       (column_settings
         (primary_key_setting)))))
+
+================================================================================
+Multiline string
+================================================================================
+
+table notes {
+  Note: '''
+    # Hello world
+
+    This is a multiline string
+  '''
+}
+
+--------------------------------------------------------------------------------
+
+(schema
+  (table
+    (table_name)
+    (note
+      (note_text
+        (multiline_string)))))
