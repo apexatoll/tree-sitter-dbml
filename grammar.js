@@ -4,19 +4,19 @@ module.exports = grammar({
   rules: {
     schema: $ => repeat($._definition),
 
-    _identifier: $ => /\w+/,
+    _identifier: _ => /\w+/,
 
-    _string: $ => /".*"/,
+    _string: _ => /".*"/,
 
-    _number: $ => /[0-9]+/,
+    _number: _ => /[0-9]+/,
 
-    _boolean: $ => choice("true", "false"),
+    _boolean: _ => choice("true", "false"),
 
-    _null: $ => choice("null", "nil"),
+    _null: _ => choice("null", "nil"),
 
-    _comment: $ => /\/\/.*\n/,
+    _comment: _ => /\/\/.*\n/,
 
-    _multiline_string: $ => seq(
+    _multiline_string: _ => seq(
       "'''",
       "\n",
       /.*/,
@@ -24,7 +24,7 @@ module.exports = grammar({
       "\n",
     ),
 
-    _multiline_comment: $ => seq(
+    _multiline_comment: _ => seq(
       "/*",
       "\n",
       /.*/,
@@ -32,7 +32,7 @@ module.exports = grammar({
       "*/",
     ),
 
-    type: $ => choice(
+    type: _ => choice(
       "bool",
       "boolean",
       "date",
