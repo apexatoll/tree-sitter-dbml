@@ -12,7 +12,7 @@ module.exports = grammar({
       $.enum,
       $.reference,
       $.table_group,
-      // $.comment,
+      $.comment,
       // $.note,
     ),
 
@@ -72,10 +72,13 @@ module.exports = grammar({
       "}",
     ),
 
-    // comment: $ => seq(
+    comment: $ => choice(
+      $._inline_comment,
+      // $._multiline_comment,
+    ),
 
-    // ),
-
+    _inline_comment: $ => /\/\/.*\n/,
+    
     // note: $ => seq(
 
     // ),

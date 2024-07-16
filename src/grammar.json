@@ -34,6 +34,10 @@
         {
           "type": "SYMBOL",
           "name": "table_group"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
         }
       ]
     },
@@ -279,6 +283,19 @@
           "value": "}"
         }
       ]
+    },
+    "comment": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_inline_comment"
+        }
+      ]
+    },
+    "_inline_comment": {
+      "type": "PATTERN",
+      "value": "\\/\\/.*\\n"
     }
   },
   "extras": [

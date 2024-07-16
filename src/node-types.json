@@ -1,5 +1,10 @@
 [
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "document",
     "named": true,
     "fields": {},
@@ -7,6 +12,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
         {
           "type": "enum",
           "named": true
