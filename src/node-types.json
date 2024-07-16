@@ -78,6 +78,11 @@
     }
   },
   {
+    "type": "note_text",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "project",
     "named": true,
     "fields": {},
@@ -138,6 +143,14 @@
     }
   },
   {
+    "type": "\n",
+    "named": false
+  },
+  {
+    "type": "'''",
+    "named": false
+  },
+  {
     "type": ":",
     "named": false
   },
@@ -179,10 +192,6 @@
   },
   {
     "type": "note_name",
-    "named": true
-  },
-  {
-    "type": "note_text",
     "named": true
   },
   {

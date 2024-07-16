@@ -6,6 +6,16 @@ module.exports = grammar({
 
     _identifier: $ => /\w+/,
 
+    _string: $ => /".*"/,
+
+    _multiline_string: $ => seq(
+      "'''",
+      "\n",
+      /.*/,
+      "'''",
+      "\n",
+    ),
+
     _definition: $ => choice(
       $.project,
       $.table,
@@ -82,10 +92,12 @@ module.exports = grammar({
     note: $ => choice(
       $._short_note,
       $._long_note,
-      // $._multiline_note,
     ),
 
-    note_text: $ => /".*"/,
+    note_text: $ => choice(
+      $._string,
+      $._multiline_string,
+    ),
 
     _short_note: $ => seq(
       choice("note", "Note"),

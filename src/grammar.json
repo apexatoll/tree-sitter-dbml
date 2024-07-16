@@ -12,6 +12,35 @@
       "type": "PATTERN",
       "value": "\\w+"
     },
+    "_string": {
+      "type": "PATTERN",
+      "value": "\".*\""
+    },
+    "_multiline_string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "'''"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        },
+        {
+          "type": "PATTERN",
+          "value": ".*"
+        },
+        {
+          "type": "STRING",
+          "value": "'''"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
     "_definition": {
       "type": "CHOICE",
       "members": [
@@ -315,8 +344,17 @@
       ]
     },
     "note_text": {
-      "type": "PATTERN",
-      "value": "\".*\""
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_multiline_string"
+        }
+      ]
     },
     "_short_note": {
       "type": "SEQ",
