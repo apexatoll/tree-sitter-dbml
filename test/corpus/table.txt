@@ -61,7 +61,8 @@ Table people {
       (column_name)
       (type))
     (note
-      (note_text))))
+      (note_text
+        (string)))))
 
 ================================================================================
 Table with unary column settings
@@ -107,7 +108,8 @@ Table people {
       (column_settings
         (null_setting)
         (note
-          (note_text))))))
+          (note_text
+            (string)))))))
 
 ================================================================================
 Table with binary column settings
@@ -178,7 +180,8 @@ Table people [headercolor: "#555555", focus] {
     (table_settings
       (key_value
         (key)
-        (value))
+        (value
+          (string)))
       (keyword))
     (column
       (column_name)

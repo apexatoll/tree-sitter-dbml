@@ -48,14 +48,18 @@ Project some_project {
     (project_name)
     (key_value
       (key)
-      (value))
+      (value
+        (string)))
     (key_value
       (key)
-      (value))
+      (value
+        (number)))
     (key_value
       (key)
       (value))
     (note
-      (note_text))
+      (note_text
+        (string)))
     (note
-      (note_text))))
+      (note_text
+        (multiline_string)))))

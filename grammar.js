@@ -6,9 +6,9 @@ module.exports = grammar({
 
     _identifier: _ => /\w+/,
 
-    _string: _ => /".*"/,
+    string: _ => /".*"/,
 
-    _number: _ => /[0-9]+/,
+    number: _ => /[0-9]+/,
 
     _boolean: _ => choice("true", "false"),
 
@@ -16,7 +16,7 @@ module.exports = grammar({
 
     _comment: _ => /\/\/.*\n/,
 
-    _multiline_string: _ => seq(
+    multiline_string: _ => seq(
       "'''",
       "\n",
       /.*/,
@@ -53,9 +53,9 @@ module.exports = grammar({
 
     value: $ => choice(
       $._boolean,
-      $._number,
+      $.number,
       $._null,
-      $._string,
+      $.string,
     ),
 
     _definition: $ => choice(
@@ -172,7 +172,7 @@ module.exports = grammar({
     ),
 
     variant: $ => seq(
-      choice($._identifier, $._string),
+      choice($._identifier, $.string),
       optional($.variant_notes),
     ),
 
@@ -284,8 +284,8 @@ module.exports = grammar({
     ),
 
     note_text: $ => choice(
-      $._string,
-      $._multiline_string,
+      $.string,
+      $.multiline_string,
     ),
 
     _short_note: $ => seq(

@@ -12,11 +12,11 @@
       "type": "PATTERN",
       "value": "\\w+"
     },
-    "_string": {
+    "string": {
       "type": "PATTERN",
       "value": "\".*\""
     },
-    "_number": {
+    "number": {
       "type": "PATTERN",
       "value": "[0-9]+"
     },
@@ -50,7 +50,7 @@
       "type": "PATTERN",
       "value": "\\/\\/.*\\n"
     },
-    "_multiline_string": {
+    "multiline_string": {
       "type": "SEQ",
       "members": [
         {
@@ -176,7 +176,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_number"
+          "name": "number"
         },
         {
           "type": "SYMBOL",
@@ -184,7 +184,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_string"
+          "name": "string"
         }
       ]
     },
@@ -746,7 +746,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "_string"
+              "name": "string"
             }
           ]
         },
@@ -1263,11 +1263,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_string"
+          "name": "string"
         },
         {
           "type": "SYMBOL",
-          "name": "_multiline_string"
+          "name": "multiline_string"
         }
       ]
     },

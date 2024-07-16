@@ -60,9 +60,12 @@ enum enum_name {
 (schema
   (enum
     (enum_name)
-    (variant)
-    (variant)
-    (variant)))
+    (variant
+      (string))
+    (variant
+      (string))
+    (variant
+      (string))))
 
 ================================================================================
 Enum with notes
@@ -82,9 +85,11 @@ enum enum_name {
     (variant
       (variant_notes
         (note
-          (note_text))))
+          (note_text
+            (string)))))
     (variant)
     (variant
       (variant_notes
         (note
-          (note_text))))))
+          (note_text
+            (string)))))))

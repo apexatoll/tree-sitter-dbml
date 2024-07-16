@@ -257,6 +257,11 @@
     }
   },
   {
+    "type": "multiline_string",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "note",
     "named": true,
     "fields": {},
@@ -278,7 +283,21 @@
   {
     "type": "note_text",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "multiline_string",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "one_to_many",
@@ -511,16 +530,34 @@
   {
     "type": "value",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "variant",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "string",
+          "named": true
+        },
         {
           "type": "variant_notes",
           "named": true
@@ -704,6 +741,10 @@
     "named": true
   },
   {
+    "type": "number",
+    "named": true
+  },
+  {
     "type": "primary_key_setting",
     "named": true
   },
@@ -730,6 +771,10 @@
   {
     "type": "string",
     "named": false
+  },
+  {
+    "type": "string",
+    "named": true
   },
   {
     "type": "table",
