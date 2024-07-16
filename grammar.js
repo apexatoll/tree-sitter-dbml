@@ -13,7 +13,7 @@ module.exports = grammar({
       $.reference,
       $.table_group,
       $.comment,
-      // $.note,
+      $.note,
     ),
 
     project: $ => seq(
@@ -79,8 +79,24 @@ module.exports = grammar({
 
     _inline_comment: $ => /\/\/.*\n/,
     
-    // note: $ => seq(
+    note: $ => choice(
+      $._short_note,
+      $._long_note,
+      // $._multiline_note,
+    ),
 
-    // ),
+    _short_note: $ => seq(
+      choice("note", "Note"),
+      ":",
+      // $.note_text
+    ),
+
+    _long_note: $ => seq(
+      choice("note", "Note"),
+      optional(alias($._identifier, $.note_name)),
+      "{",
+      // $.note_text,
+      "}",
+    )
   }
 })

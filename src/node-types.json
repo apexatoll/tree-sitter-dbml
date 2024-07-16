@@ -21,6 +21,10 @@
           "named": true
         },
         {
+          "type": "note",
+          "named": true
+        },
+        {
           "type": "project",
           "named": true
         },
@@ -49,6 +53,21 @@
       "types": [
         {
           "type": "enum_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "note",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "note_name",
           "named": true
         }
       ]
@@ -123,6 +142,10 @@
     "named": false
   },
   {
+    "type": "Note",
+    "named": false
+  },
+  {
     "type": "Project",
     "named": false
   },
@@ -144,6 +167,14 @@
   },
   {
     "type": "enum_name",
+    "named": true
+  },
+  {
+    "type": "note",
+    "named": false
+  },
+  {
+    "type": "note_name",
     "named": true
   },
   {
