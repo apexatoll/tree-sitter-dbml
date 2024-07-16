@@ -157,8 +157,12 @@ module.exports = grammar({
       choice("enum", "Enum"),
       alias($._identifier, $.enum_name),
       "{",
-      // repeat($.enum_row),
+      repeat($.variant),
       "}"
+    ),
+
+    variant: $ => seq(
+      choice($._identifier, $._string),
     ),
 
     reference: $ => choice(

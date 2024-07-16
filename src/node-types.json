@@ -141,11 +141,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "enum_name",
+          "named": true
+        },
+        {
+          "type": "variant",
           "named": true
         }
       ]
@@ -502,6 +506,11 @@
   },
   {
     "type": "value",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "variant",
     "named": true,
     "fields": {}
   },
