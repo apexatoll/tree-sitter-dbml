@@ -447,6 +447,10 @@
           "named": true
         },
         {
+          "type": "schema_name",
+          "named": true
+        },
+        {
           "type": "table_alias",
           "named": true
         },

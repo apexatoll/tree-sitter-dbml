@@ -27,7 +27,7 @@ table table_name {
     (table_name)))
 
 ================================================================================
-Simple table definition
+Simple public table definition
 ================================================================================
 
 Table people {
@@ -44,6 +44,45 @@ Table people {
 
 (schema
   (table
+    (table_name)
+    (column
+      (column_name)
+      (type))
+    (column
+      (column_name)
+      (type))
+    (column
+      (column_name)
+      (type))
+    (column
+      (column_name)
+      (type))
+    (column
+      (column_name)
+      (type))
+    (note
+      (note_text
+        (string)))))
+
+================================================================================
+Simple scoped table definition
+================================================================================
+
+Table app.people {
+  id int
+  name varchar
+  is_adult boolean
+  created_at datetime
+  updated_at datetime
+
+  Note: "This is a note"
+}
+
+--------------------------------------------------------------------------------
+
+(schema
+  (table
+    (schema_name)
     (table_name)
     (column
       (column_name)

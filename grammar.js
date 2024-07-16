@@ -83,6 +83,12 @@ module.exports = grammar({
 
     table: $ => seq(
       choice("table", "Table"),
+      optional(
+        seq(
+          alias($._identifier, $.schema_name),
+          "."
+        )
+      ),
       alias($._identifier, $.table_name),
       optional($._table_alias),
       optional($.table_settings),
