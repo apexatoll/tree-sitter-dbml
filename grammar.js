@@ -4,8 +4,10 @@ module.exports = grammar({
   rules: {
     document: $ => repeat($._definition),
 
+    _identifier: $ => /\w+/,
+
     _definition: $ => choice(
-      // $.project,
+      $.project,
       // $.table,
       // $.enum,
       // $.reference,
@@ -14,9 +16,13 @@ module.exports = grammar({
       // $.note,
     ),
 
-    // project: $ => seq(
-
-    // ),
+    project: $ => seq(
+      choice("project", "Project"),
+      alias($._identifier, $.project_name),
+      "{",
+      // $.project_row,
+      "}"
+    ),
 
     // table: $ => seq(
 
