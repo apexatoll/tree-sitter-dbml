@@ -479,6 +479,10 @@
         {
           "type": "SYMBOL",
           "name": "default_setting"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_inline_reference"
         }
       ]
     },
@@ -496,6 +500,40 @@
         {
           "type": "SYMBOL",
           "name": "value"
+        }
+      ]
+    },
+    "_inline_reference": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ref"
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "inline_one_to_many"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "inline_many_to_one"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "inline_one_to_one"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "inline_many_to_many"
+            }
+          ]
         }
       ]
     },
@@ -685,6 +723,24 @@
         }
       ]
     },
+    "inline_one_to_many": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "<"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_column_reference"
+          },
+          "named": true,
+          "value": "to_column"
+        }
+      ]
+    },
     "many_to_one": {
       "type": "SEQ",
       "members": [
@@ -697,6 +753,24 @@
           "named": true,
           "value": "from_column"
         },
+        {
+          "type": "STRING",
+          "value": ">"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_column_reference"
+          },
+          "named": true,
+          "value": "to_column"
+        }
+      ]
+    },
+    "inline_many_to_one": {
+      "type": "SEQ",
+      "members": [
         {
           "type": "STRING",
           "value": ">"
@@ -739,6 +813,24 @@
         }
       ]
     },
+    "inline_one_to_one": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "-"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_column_reference"
+          },
+          "named": true,
+          "value": "to_column"
+        }
+      ]
+    },
     "many_to_many": {
       "type": "SEQ",
       "members": [
@@ -751,6 +843,24 @@
           "named": true,
           "value": "from_column"
         },
+        {
+          "type": "STRING",
+          "value": "<>"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_column_reference"
+          },
+          "named": true,
+          "value": "to_column"
+        }
+      ]
+    },
+    "inline_many_to_many": {
+      "type": "SEQ",
+      "members": [
         {
           "type": "STRING",
           "value": "<>"

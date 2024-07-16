@@ -273,3 +273,44 @@ Ref name {
         (schema_name)
         (table_name)
         (column_name)))))
+
+================================================================================
+Inline references
+================================================================================
+
+Table people {
+  id int [pk, ref: < posts.id]
+  account_id int [ref: > accounts.id]
+  info_id int [ref: - infos.id]
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_name)
+    (column
+      (column_name)
+      (type)
+      (column_settings
+        (primary_key_setting)
+        (inline_one_to_many
+          (to_column
+            (table_name)
+            (column_name)))))
+    (column
+      (column_name)
+      (type)
+      (column_settings
+        (inline_many_to_one
+          (to_column
+            (table_name)
+            (column_name)))))
+    (column
+      (column_name)
+      (type)
+      (column_settings
+        (inline_one_to_one
+          (to_column
+            (table_name)
+            (column_name)))))))

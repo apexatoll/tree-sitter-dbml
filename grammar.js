@@ -115,13 +115,24 @@ module.exports = grammar({
 
     _binary_setting: $ => choice(
       $.default_setting,
-      // $.inline_reference
+      $._inline_reference,
     ),
 
     default_setting: $ => seq(
       "default",
       ":",
       $.value
+    ),
+
+    _inline_reference: $ => seq(
+      "ref",
+      ":",
+      choice(
+        $.inline_one_to_many,
+        $.inline_many_to_one,
+        $.inline_one_to_one,
+        $.inline_many_to_many,
+      )
     ),
 
     enum: $ => seq(
@@ -165,8 +176,18 @@ module.exports = grammar({
       alias($._column_reference, $.to_column),
     ),
 
+    inline_one_to_many: $ => seq(
+      "<",
+      alias($._column_reference, $.to_column),
+    ),
+
     many_to_one: $ => seq(
       alias($._column_reference, $.from_column),
+      ">",
+      alias($._column_reference, $.to_column),
+    ),
+
+    inline_many_to_one: $ => seq(
       ">",
       alias($._column_reference, $.to_column),
     ),
@@ -177,8 +198,18 @@ module.exports = grammar({
       alias($._column_reference, $.to_column),
     ),
 
+    inline_one_to_one: $ => seq(
+      "-",
+      alias($._column_reference, $.to_column),
+    ),
+
     many_to_many: $ => seq(
       alias($._column_reference, $.from_column),
+      "<>",
+      alias($._column_reference, $.to_column),
+    ),
+
+    inline_many_to_many: $ => seq(
       "<>",
       alias($._column_reference, $.to_column),
     ),

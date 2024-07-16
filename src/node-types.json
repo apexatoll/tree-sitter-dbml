@@ -39,6 +39,22 @@
           "named": true
         },
         {
+          "type": "inline_many_to_many",
+          "named": true
+        },
+        {
+          "type": "inline_many_to_one",
+          "named": true
+        },
+        {
+          "type": "inline_one_to_many",
+          "named": true
+        },
+        {
+          "type": "inline_one_to_one",
+          "named": true
+        },
+        {
           "type": "not_null_setting",
           "named": true
         },
@@ -153,6 +169,66 @@
         },
         {
           "type": "table_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inline_many_to_many",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "to_column",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inline_many_to_one",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "to_column",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inline_one_to_many",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "to_column",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inline_one_to_one",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "to_column",
           "named": true
         }
       ]
