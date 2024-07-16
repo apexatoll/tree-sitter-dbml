@@ -2,7 +2,7 @@ module.exports = grammar({
   name: "dbml",
 
   rules: {
-    document: $ => repeat($._definition),
+    schema: $ => repeat($._definition),
 
     _identifier: $ => /\w+/,
 

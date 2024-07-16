@@ -8,7 +8,7 @@ Project project_name {
 
 --------------------------------------------------------------------------------
 
-(document
+(schema
   (project
     (project_name)))
 
@@ -22,7 +22,7 @@ project project_name {
 
 --------------------------------------------------------------------------------
 
-(document
+(schema
   (project
     (project_name)))
 
@@ -43,7 +43,7 @@ Project some_project {
 
 --------------------------------------------------------------------------------
 
-(document
+(schema
   (project
     (project_name)
     (key_value

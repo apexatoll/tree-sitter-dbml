@@ -8,7 +8,7 @@ Table table_name {
 
 --------------------------------------------------------------------------------
 
-(document
+(schema
   (table
     (table_name)))
 
@@ -22,7 +22,7 @@ table table_name {
 
 --------------------------------------------------------------------------------
 
-(document
+(schema
   (table
     (table_name)))
 
@@ -42,7 +42,7 @@ Table people {
 
 --------------------------------------------------------------------------------
 
-(document
+(schema
   (table
     (table_name)
     (column
@@ -77,7 +77,7 @@ Table people {
 
 --------------------------------------------------------------------------------
 
-(document
+(schema
   (table
     (table_name)
     (column
@@ -121,7 +121,7 @@ Table people {
 
 --------------------------------------------------------------------------------
 
-(document
+(schema
   (table
     (table_name)
     (column
@@ -152,7 +152,7 @@ Table people as Ppl {
 
 --------------------------------------------------------------------------------
 
-(document
+(schema
   (table
     (table_name)
     (table_alias)
@@ -172,7 +172,7 @@ Table people [headercolor: "#555555", focus] {
 
 --------------------------------------------------------------------------------
 
-(document
+(schema
   (table
     (table_name)
     (table_settings

@@ -1,7 +1,7 @@
 {
   "name": "dbml",
   "rules": {
-    "document": {
+    "schema": {
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
