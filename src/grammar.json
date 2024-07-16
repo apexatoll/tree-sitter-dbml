@@ -314,6 +314,10 @@
         }
       ]
     },
+    "note_text": {
+      "type": "PATTERN",
+      "value": "\".*\""
+    },
     "_short_note": {
       "type": "SEQ",
       "members": [
@@ -333,6 +337,18 @@
         {
           "type": "STRING",
           "value": ":"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "note_text"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -372,6 +388,18 @@
         {
           "type": "STRING",
           "value": "{"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "note_text"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",

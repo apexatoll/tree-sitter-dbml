@@ -63,11 +63,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
         {
           "type": "note_name",
+          "named": true
+        },
+        {
+          "type": "note_text",
           "named": true
         }
       ]
@@ -175,6 +179,10 @@
   },
   {
     "type": "note_name",
+    "named": true
+  },
+  {
+    "type": "note_text",
     "named": true
   },
   {

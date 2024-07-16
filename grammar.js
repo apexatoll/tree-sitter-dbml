@@ -85,17 +85,19 @@ module.exports = grammar({
       // $._multiline_note,
     ),
 
+    note_text: $ => /".*"/,
+
     _short_note: $ => seq(
       choice("note", "Note"),
       ":",
-      // $.note_text
+      optional($.note_text),
     ),
 
     _long_note: $ => seq(
       choice("note", "Note"),
       optional(alias($._identifier, $.note_name)),
       "{",
-      // $.note_text,
+      optional($.note_text),
       "}",
     )
   }
