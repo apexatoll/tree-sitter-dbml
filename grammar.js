@@ -87,7 +87,29 @@ module.exports = grammar({
     column: $ => seq(
       alias($._identifier, $.column_name),
       $.type,
-      // optional($.column_attributes),
+      optional($.column_settings),
+    ),
+
+    column_settings: $ => seq(
+      "[",
+      list(
+        choice(
+          $._unary_setting,
+          $.note
+        )
+      ),
+      "]",
+    ),
+
+    _unary_setting: $ => choice(
+      alias(
+        choice("primary key", "pk"),
+        $.primary_key_setting
+      ),
+      alias("null", $.null_setting),
+      alias("not null", $.not_null_setting),
+      alias("unique", $.unique_setting),
+      alias("increment", $.increment_setting),
     ),
 
     enum: $ => seq(
@@ -170,3 +192,13 @@ module.exports = grammar({
     )
   }
 })
+
+function list(...rules) {
+  return optional(list1(...rules))
+}
+
+function list1(...rules) {
+  rules = choice(...rules)
+
+  return seq(rules, repeat(seq(",", rules)))
+}
