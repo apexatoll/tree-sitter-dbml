@@ -430,6 +430,10 @@
         {
           "type": "table_name",
           "named": true
+        },
+        {
+          "type": "table_settings",
+          "named": true
         }
       ]
     }
@@ -444,6 +448,25 @@
       "types": [
         {
           "type": "table_group_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "table_settings",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "key_value",
+          "named": true
+        },
+        {
+          "type": "keyword",
           "named": true
         }
       ]
@@ -612,6 +635,10 @@
   },
   {
     "type": "key",
+    "named": true
+  },
+  {
+    "type": "keyword",
     "named": true
   },
   {

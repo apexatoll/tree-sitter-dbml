@@ -161,3 +161,27 @@ Table people as Ppl {
       (type)
       (column_settings
         (primary_key_setting)))))
+
+================================================================================
+Table with settings
+================================================================================
+
+Table people [headercolor: "#555555", focus] {
+  id int [pk]
+}
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_name)
+    (table_settings
+      (key_value
+        (key)
+        (value))
+      (keyword))
+    (column
+      (column_name)
+      (type)
+      (column_settings
+        (primary_key_setting)))))
