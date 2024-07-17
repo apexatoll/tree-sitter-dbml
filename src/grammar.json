@@ -87,16 +87,20 @@
           "value": "/*"
         },
         {
-          "type": "STRING",
-          "value": "\n"
-        },
-        {
-          "type": "PATTERN",
-          "value": ".*"
-        },
-        {
-          "type": "STRING",
-          "value": "\n"
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": ".*"
+              },
+              {
+                "type": "STRING",
+                "value": "\n"
+              }
+            ]
+          }
         },
         {
           "type": "STRING",

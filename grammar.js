@@ -24,9 +24,7 @@ module.exports = grammar({
 
     _multiline_comment: _ => seq(
       "/*",
-      "\n",
-      /.*/,
-      "\n",
+      repeat(seq(/.*/, "\n")),
       "*/",
     ),
 
