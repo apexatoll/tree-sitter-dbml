@@ -10,7 +10,7 @@ module.exports = grammar({
 
     number: _ => /[0-9]+/,
 
-    _boolean: _ => choice("true", "false"),
+    boolean: _ => choice("true", "false"),
 
     _null: _ => choice("null", "nil"),
 
@@ -50,7 +50,7 @@ module.exports = grammar({
     ),
 
     value: $ => choice(
-      $._boolean,
+      $.boolean,
       $.number,
       $._null,
       $.string,

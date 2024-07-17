@@ -20,7 +20,7 @@
       "type": "PATTERN",
       "value": "[0-9]+"
     },
-    "_boolean": {
+    "boolean": {
       "type": "CHOICE",
       "members": [
         {
@@ -176,7 +176,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_boolean"
+          "name": "boolean"
         },
         {
           "type": "SYMBOL",

@@ -185,7 +185,8 @@ Table people {
       (type)
       (column_settings
         (default_setting
-          (value))))))
+          (value
+            (boolean)))))))
 
 ================================================================================
 Table with alias
