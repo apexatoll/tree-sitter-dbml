@@ -14,7 +14,7 @@
     },
     "string": {
       "type": "PATTERN",
-      "value": "\".*\""
+      "value": "(\".*\"|'.*')"
     },
     "number": {
       "type": "PATTERN",

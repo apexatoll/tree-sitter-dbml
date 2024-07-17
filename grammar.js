@@ -6,7 +6,7 @@ module.exports = grammar({
 
     _identifier: _ => /\w+/,
 
-    string: _ => /".*"/,
+    string: _ => /(".*"|'.*')/,
 
     number: _ => /[0-9]+/,
 
