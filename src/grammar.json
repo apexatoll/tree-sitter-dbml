@@ -33,7 +33,7 @@
         }
       ]
     },
-    "_null": {
+    "null": {
       "type": "CHOICE",
       "members": [
         {
@@ -184,7 +184,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_null"
+          "name": "null"
         },
         {
           "type": "SYMBOL",

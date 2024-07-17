@@ -305,6 +305,11 @@
     }
   },
   {
+    "type": "null",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "one_to_many",
     "named": true,
     "fields": {},
@@ -542,10 +547,14 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "null",
           "named": true
         },
         {
@@ -783,11 +792,11 @@
   },
   {
     "type": "string",
-    "named": true
+    "named": false
   },
   {
     "type": "string",
-    "named": false
+    "named": true
   },
   {
     "type": "table",

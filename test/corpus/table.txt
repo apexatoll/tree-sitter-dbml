@@ -179,7 +179,8 @@ Table people {
       (type)
       (column_settings
         (default_setting
-          (value))))
+          (value
+            (null)))))
     (column
       (column_name)
       (type)
