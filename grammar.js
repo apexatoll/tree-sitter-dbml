@@ -4,7 +4,7 @@ module.exports = grammar({
   rules: {
     schema: $ => repeat($._definition),
 
-    _identifier: _ => /\w+/,
+    _identifier: _ => /[A-Za-z][A-Za-z0-9_-]+/,
 
     string: _ => /(".*"|'.*')/,
 
@@ -55,6 +55,7 @@ module.exports = grammar({
       $.null,
       $.string,
       $.expression,
+      alias($._identifier, $.identifier),
     ),
 
     _definition: $ => choice(

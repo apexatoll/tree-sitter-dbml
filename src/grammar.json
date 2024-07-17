@@ -10,7 +10,7 @@
     },
     "_identifier": {
       "type": "PATTERN",
-      "value": "\\w+"
+      "value": "[A-Za-z][A-Za-z0-9_-]+"
     },
     "string": {
       "type": "PATTERN",
@@ -201,6 +201,15 @@
         {
           "type": "SYMBOL",
           "name": "expression"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_identifier"
+          },
+          "named": true,
+          "value": "identifier"
         }
       ]
     },
