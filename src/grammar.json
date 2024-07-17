@@ -281,6 +281,10 @@
         {
           "type": "SYMBOL",
           "name": "note"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
         }
       ]
     },
@@ -488,6 +492,10 @@
         {
           "type": "SYMBOL",
           "name": "note"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
         }
       ]
     },
@@ -773,12 +781,25 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "variant"
+            "name": "_enum_row"
           }
         },
         {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "_enum_row": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "variant"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
         }
       ]
     },
@@ -1265,18 +1286,31 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "ALIAS",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_identifier"
-            },
-            "named": true,
-            "value": "table_name"
+            "type": "SYMBOL",
+            "name": "_table_group_row"
           }
         },
         {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "_table_group_row": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_identifier"
+          },
+          "named": true,
+          "value": "table_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
         }
       ]
     },

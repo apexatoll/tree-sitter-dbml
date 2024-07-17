@@ -74,7 +74,8 @@ module.exports = grammar({
 
     _project_row: $ => choice(
       $.key_value,
-      $.note
+      $.note,
+      $.comment,
     ),
 
     table: $ => seq(
@@ -112,6 +113,7 @@ module.exports = grammar({
     _table_row: $ => choice(
       $.column,
       $.note,
+      $.comment,
     ),
 
     column: $ => seq(
@@ -172,8 +174,13 @@ module.exports = grammar({
       choice("enum", "Enum"),
       alias($._identifier, $.enum_name),
       "{",
-      repeat($.variant),
+      repeat($._enum_row),
       "}"
+    ),
+
+    _enum_row: $ => choice(
+      $.variant,
+      $.comment,
     ),
 
     variant: $ => seq(
@@ -274,8 +281,13 @@ module.exports = grammar({
       choice("tablegroup", "TableGroup"),
       optional(alias($._identifier, $.table_group_name)),
       "{",
-      repeat(alias($._identifier, $.table_name)),
+      repeat($._table_group_row),
       "}",
+    ),
+
+    _table_group_row: $ => choice(
+      alias($._identifier, $.table_name),
+      $.comment,
     ),
 
     comment: $ => choice(
