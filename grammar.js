@@ -8,6 +8,8 @@ module.exports = grammar({
 
     string: _ => /(".*"|'.*')/,
 
+    expression: _ => /`.*`/,
+
     number: _ => /[0-9]+/,
 
     boolean: _ => choice("true", "false"),
@@ -52,6 +54,7 @@ module.exports = grammar({
       $.number,
       $.null,
       $.string,
+      $.expression,
     ),
 
     _definition: $ => choice(
