@@ -116,6 +116,7 @@ module.exports = grammar({
 
     _table_row: $ => choice(
       $.column,
+      $.indexes,
       $.note,
       $.comment,
     ),
@@ -133,15 +134,15 @@ module.exports = grammar({
       "[",
       list(
         choice(
-          $._unary_setting,
-          $._binary_setting,
+          $._unary_column_setting,
+          $._binary_column_setting,
           $.note
         )
       ),
       "]",
     ),
 
-    _unary_setting: $ => choice(
+    _unary_column_setting: $ => choice(
       alias(
         choice("primary key", "pk"),
         $.primary_key_setting
@@ -152,7 +153,7 @@ module.exports = grammar({
       alias("increment", $.increment_setting),
     ),
 
-    _binary_setting: $ => choice(
+    _binary_column_setting: $ => choice(
       $.default_setting,
       $._inline_reference,
     ),
@@ -172,6 +173,73 @@ module.exports = grammar({
         $.inline_one_to_one,
         $.inline_many_to_many,
       )
+    ),
+
+    indexes: $ => seq(
+      choice("indexes", "Indexes"),
+      "{",
+      repeat($._index_row),
+      "}",
+    ),
+
+    _index_row: $ => choice(
+      $.index,
+      $.composite_index,
+      $.comment,
+    ),
+
+    index: $ => seq(
+      alias($._identifier, $.column_name),
+      optional($.index_settings)
+    ),
+
+    composite_index: $ => seq(
+      "(",
+      list1(
+        choice(
+          $.expression,
+          alias($._identifier, $.column_name),
+        )
+      ),
+      ")",
+      optional($.index_settings),
+    ),
+
+    index_settings: $ => seq(
+      "[",
+      list(
+        choice(
+          $._unary_index_setting,
+          $._binary_index_setting,
+          $.note,
+        )
+      ),
+      "]",
+    ),
+
+    _unary_index_setting: $ => choice(
+      alias(
+        choice("primary key", "pk"),
+        $.primary_key_setting
+      ),
+      alias("unique", $.unique_setting),
+    ),
+
+    _binary_index_setting: $ => choice(
+      $.index_name_setting,
+      $.index_type_setting,
+    ),
+
+    index_name_setting: $ => seq(
+      "name",
+      ":",
+      $.value,
+    ),
+
+    index_type_setting: $ => seq(
+      "type",
+      ":",
+      $.value,
     ),
 
     enum: $ => seq(

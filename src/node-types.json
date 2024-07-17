@@ -88,6 +88,29 @@
     "fields": {}
   },
   {
+    "type": "composite_index",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "column_name",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "index_settings",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "default_setting",
     "named": true,
     "fields": {},
@@ -143,6 +166,109 @@
         },
         {
           "type": "table_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "index",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "column_name",
+          "named": true
+        },
+        {
+          "type": "index_settings",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "index_name_setting",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "index_settings",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "index_name_setting",
+          "named": true
+        },
+        {
+          "type": "index_type_setting",
+          "named": true
+        },
+        {
+          "type": "note",
+          "named": true
+        },
+        {
+          "type": "primary_key_setting",
+          "named": true
+        },
+        {
+          "type": "unique_setting",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "index_type_setting",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "indexes",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "composite_index",
+          "named": true
+        },
+        {
+          "type": "index",
           "named": true
         }
       ]
@@ -465,6 +591,10 @@
           "named": true
         },
         {
+          "type": "indexes",
+          "named": true
+        },
+        {
           "type": "note",
           "named": true
         },
@@ -635,6 +765,14 @@
     "named": false
   },
   {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
     "type": "*/",
     "named": false
   },
@@ -672,6 +810,10 @@
   },
   {
     "type": "Enum",
+    "named": false
+  },
+  {
+    "type": "Indexes",
     "named": false
   },
   {
@@ -755,6 +897,10 @@
     "named": true
   },
   {
+    "type": "indexes",
+    "named": false
+  },
+  {
     "type": "int",
     "named": false
   },
@@ -769,6 +915,10 @@
   {
     "type": "keyword",
     "named": true
+  },
+  {
+    "type": "name",
+    "named": false
   },
   {
     "type": "nil",
@@ -860,6 +1010,10 @@
   },
   {
     "type": "true",
+    "named": false
+  },
+  {
+    "type": "type",
     "named": false
   },
   {

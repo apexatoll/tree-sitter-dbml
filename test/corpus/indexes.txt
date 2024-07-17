@@ -1,0 +1,72 @@
+================================================================================
+Various indexes
+================================================================================
+
+Table bookings {
+    id integer
+    country varchar
+    booking_date date
+    created_at timestamp
+
+    indexes {
+        (id, country) [pk] // composite primary key
+        created_at [name: 'created_at_index', note: 'Date']
+        booking_date
+        (country, booking_date) [unique]
+        booking_date [type: hash]
+        (`id*2`)
+        (`id*3`,`getdate()`)
+        (`id*3`,id)
+    }
+}
+
+--------------------------------------------------------------------------------
+
+(schema
+  (table
+    (table_name)
+    (column
+      (column_name)
+      (type))
+    (column
+      (column_name)
+      (type))
+    (column
+      (column_name)
+      (type))
+    (column
+      (column_name)
+      (type))
+    (indexes
+      (composite_index
+        (column_name)
+        (column_name)
+        (index_settings
+          (primary_key_setting)))
+      (comment)
+      (index
+        (column_name)
+        (index_settings
+          (index_name_setting
+            (value
+              (string)))))
+      (index
+        (column_name))
+      (composite_index
+        (column_name)
+        (column_name)
+        (index_settings
+          (unique_setting)))
+      (index
+        (column_name)
+        (index_settings
+          (index_type_setting
+            (value
+              (identifier)))))
+      (composite_index
+        (expression))
+      (composite_index
+        (expression))
+      (composite_index
+        (expression)
+        (column_name)))))
